@@ -1,0 +1,111 @@
+<html>
+   
+   <head>
+
+      <title>Form Validation</title>
+      
+      <script type="text/javascript">
+         <!--
+        
+
+              
+      function validate()
+      {
+           
+         
+        if(document.myForm.Address.value == "" || document.myForm.Address.value.length <6 || document.myForm.Address.value.match(/^[0-9a-zA-Z]+$/))
+         {
+
+          alert ("enter your address");
+          document.myForm.Address.focus();
+          return false;
+         }
+       
+         if( document.myForm.Name.value == "" || document.myForm.Address.value.match(/^[a-zA-Z]))
+         {
+            alert( "Please provide your name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+         
+         
+         if( document.myForm.EMail.value == "" )
+         {
+            alert( "Please provide your Email!" );
+            document.myForm.EMail.focus() ;
+            return false;
+         }
+          
+         if( document.myForm.Zip.value == "" ||
+         isNaN( document.myForm.Zip.value ) ||
+         document.myForm.Zip.value.length != 5 )
+         {
+            alert( "Please provide a zip in the format #####." );
+            document.myForm.Zip.focus() ;
+            return false;
+         }
+                
+
+         if( document.myForm.Country.value == "-1" )
+         {
+            alert( "Please provide your country!" );
+            return false;
+         }
+
+         
+         return( true );
+      }
+   //-->
+      </script>
+      
+   </head>
+   
+   <body>
+
+           
+      http://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAmHE9W.img?h=249&w=546&m=6&q=90&f=jpg&u=t&o=t&l=f&x=368&y=18
+      <form action="/cgi-bin/test.cgi" name="myForm" onsubmit="return(validate());">
+         <table cellspacing="2" cellpadding="2" border="1">
+            
+            <tr>
+               <td align="right">Name</td>
+               <td><input type="text" name="Name" /></td>
+            </tr>
+            
+            <tr>
+               <td align="right">EMail</td>
+               <td><input type="text" name="EMail" /></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Zip Code</td>
+               <td><input type="text" name="Zip" /></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Country</td>
+               <td>
+                  <select name="Country">
+                     <option value="-1" selected>[choose yours]</option>
+                     <option value="1">USA</option>
+                     <option value="2">UK</option>
+                     <option value="3">INDIA</option>
+                  </select>
+               </td>
+            </tr>
+
+           <tr>
+            <td align = "right"> Address</td>
+            <td><input type = "text" name = "Address" /></td>
+             </tr>
+            
+            <tr>
+               <td align="right"></td>
+               <td><input type="submit" value="Submit" /></td>
+            </tr>
+            
+         </table>
+      </form>
+      
+   </body>
+</html>
